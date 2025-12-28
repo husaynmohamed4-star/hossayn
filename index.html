@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hussein Mohamed | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-badge">Welcome</span>
+
+      <!-- ✨ ضفنا data-text فقط -->
+      <h1 class="hero-title" data-text="Hussein Mohamed">
+        Hussein <span>Mohamed</span>
+      </h1>
+
+      <h2 class="hero-subtitle">Graphic Designer & Visual Creator</h2>
+      <p class="hero-desc">
+        I create modern, clean, and creative designs that help brands stand out visually.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="javascript:void(0)" class="btn primary" id="viewProjectsBtn">View Projects</a>
+        <a href="about.html" class="btn outline">About Me</a>
+        <a href="cv.html" class="btn outline">Download CV</a>
+        <a href="javascript:void(0)" class="btn outline" id="openSocialBtn">Social Media</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS MODAL -->
+  <div class="projects-modal" id="projectsModal">
+    <div class="modal-content">
+      <a href="social.html" class="project-box">Social</a>
+      <a href="branding.html" class="project-box">Branding</a>
+      <span class="close-modal" id="closeProjects">×</span>
+    </div>
+  </div>
+
+  <!-- SOCIAL MODAL -->
+  <div class="projects-modal" id="socialModal">
+    <div class="modal-content">
+      <a href="https://www.facebook.com/share/1AK2kLC8EP//" target="_blank" class="project-box social-facebook">Facebook</a>
+      <a href="https://www.instagram.com/h7sn___?igsh=Yzh1NnM3ajNxb2R6/" target="_blank" class="project-box social-instagram">Instagram</a>
+      <a href="https://www.behance.net/595a6836/" target="_blank" class="project-box social-behance">Behance</a>
+      <a href="https://www.tiktok.com/@hs121x" target="_blank" class="project-box social-tiktok">TikTok</a>
+      <a href="https://wa.me/201507280647" target="_blank" class="project-box social-whatsapp">WhatsApp</a>
+
+      <span class="close-modal" id="closeSocial">×</span>
+    </div>
+  </div>
+
+<script>
+  // Projects Modal
+  const viewBtn = document.getElementById('viewProjectsBtn');
+  const modal = document.getElementById('projectsModal');
+  const closeModal = document.getElementById('closeProjects');
+
+  viewBtn.addEventListener('click', () => {
+    modal.classList.add('active');
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  // Social Media Modal
+  const openSocialBtn = document.getElementById('openSocialBtn');
+  const socialModal = document.getElementById('socialModal');
+  const closeSocial = document.getElementById('closeSocial');
+
+  openSocialBtn.addEventListener('click', () => {
+    socialModal.classList.add('active');
+  });
+
+  closeSocial.addEventListener('click', () => {
+    socialModal.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>

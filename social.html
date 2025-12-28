@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Projects - Hussein Mohamed</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="portfolio-section">
+  <div class="portfolio-category">
+    <h2>Social Media</h2>
+    <div class="images-grid">
+      <!-- 30 صورة -->
+      <div class="image-box"><img src="images/social1.jpg" alt="Social 1"></div>
+      <div class="image-box"><img src="images/social2.jpg" alt="Social 2"></div>
+      <div class="image-box"><img src="images/social3.jpg" alt="Social 3"></div>
+      <div class="image-box"><img src="images/social4.jpg" alt="Social 4"></div>
+      <div class="image-box"><img src="images/social5.jpg" alt="Social 5"></div>
+      <div class="image-box"><img src="images/social6.jpg" alt="Social 6"></div>
+      <div class="image-box"><img src="images/social7.jpg" alt="Social 7"></div>
+      <div class="image-box"><img src="images/social8.jpg" alt="Social 8"></div>
+      <div class="image-box"><img src="images/social9.jpg" alt="Social 9"></div>
+      <div class="image-box"><img src="images/social10.jpg" alt="Social 10"></div>
+      <div class="image-box"><img src="images/social11.jpg" alt="Social 11"></div>
+      <div class="image-box"><img src="images/social12.jpg" alt="Social 12"></div>
+      <div class="image-box"><img src="images/social13.jpg" alt="Social 13"></div>
+      <div class="image-box"><img src="images/social14.jpg" alt="Social 14"></div>
+      <div class="image-box"><img src="images/social15.jpg" alt="Social 15"></div>
+      <div class="image-box"><img src="images/social16.jpg" alt="Social 16"></div>
+      <div class="image-box"><img src="images/social17.jpg" alt="Social 17"></div>
+      <div class="image-box"><img src="images/social18.jpg" alt="Social 18"></div>
+      <div class="image-box"><img src="images/social19.jpg" alt="Social 19"></div>
+      <div class="image-box"><img src="images/social20.jpg" alt="Social 20"></div>
+      <div class="image-box"><img src="images/social21.jpg" alt="Social 21"></div>
+      <div class="image-box"><img src="images/social22.jpg" alt="Social 22"></div>
+      <div class="image-box"><img src="images/social23.jpg" alt="Social 23"></div>
+      <div class="image-box"><img src="images/social24.jpg" alt="Social 24"></div>
+      <div class="image-box"><img src="images/social25.jpg" alt="Social 25"></div>
+      <div class="image-box"><img src="images/social26.jpg" alt="Social 26"></div>
+      <div class="image-box"><img src="images/social27.jpg" alt="Social 27"></div>
+      <div class="image-box"><img src="images/social28.jpg" alt="Social 28"></div>
+      <div class="image-box"><img src="images/social29.jpg" alt="Social 29"></div>
+      <div class="image-box"><img src="images/social30.jpg" alt="Social 30"></div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE MODAL -->
+<div class="image-modal" id="imageModal">
+  <span class="close-modal" id="closeImageModal">×</span>
+  <img src="" alt="Full Image" id="fullImage">
+</div>
+
+<script>
+  const imageBoxes = document.querySelectorAll('.image-box img');
+  const imageModal = document.getElementById('imageModal');
+  const fullImage = document.getElementById('fullImage');
+  const closeImage = document.getElementById('closeImageModal');
+
+  imageBoxes.forEach(img => {
+    img.addEventListener('click', () => {
+      fullImage.src = img.src;
+      imageModal.classList.add('active');
+    });
+  });
+
+  closeImage.addEventListener('click', () => {
+    imageModal.classList.remove('active');
+  });
+</script>
+
+</body>
+</html>
