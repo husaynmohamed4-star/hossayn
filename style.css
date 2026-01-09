@@ -500,22 +500,6 @@ body::after {
     transform: translate(-50%, -50%);
   }
 }
-/* ================= PARTICLES ================= */
-.hero-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-  background-size: 20px 20px;
-  animation: particlesMove 40s linear infinite;
-  z-index: 0;
-  pointer-events: none;
-}
-
-@keyframes particlesMove {
-  0% { background-position: 0 0; }
-  100% { background-position: 1000px 1000px; }
-}
 
 /* ================= GRADIENT MOTION ================= */
 .hero-section {
