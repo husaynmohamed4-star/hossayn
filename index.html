@@ -8,79 +8,120 @@
 </head>
 <body>
 
-  <!-- HERO SECTION -->
-  <section class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <span class="hero-badge">Welcome</span>
-
-      <!-- ✨ ضفنا data-text فقط -->
-      <h1 class="hero-title" data-text="Hussein Mohamed">
-        Hussein <span>Mohamed</span>
-      </h1>
-
-      <h2 class="hero-subtitle">Graphic Designer & Visual Creator</h2>
-      <p class="hero-desc">
-        I create modern, clean, and creative designs that help brands stand out visually.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="javascript:void(0)" class="btn primary" id="viewProjectsBtn">View Projects</a>
-        <a href="about.html" class="btn outline">About Me</a>
-        <a href="cv.html" class="btn outline">Download CV</a>
-        <a href="javascript:void(0)" class="btn outline" id="openSocialBtn">Social Media</a>
-      </div>
+<!-- ================= WELCOME POPUP ================= -->
+<div id="welcomeOverlay">
+  <div class="welcomeBox">
+    <div class="welcomeHeader">
+      <h2>WELCOME</h2>
+      <p>PLEASE ENTER YOUR NAME</p>
     </div>
-  </section>
 
-  <!-- PROJECTS MODAL -->
-  <div class="projects-modal" id="projectsModal">
-    <div class="modal-content">
-      <a href="social.html" class="project-box">Social</a>
-      <a href="branding.html" class="project-box">Branding</a>
-      <span class="close-modal" id="closeProjects">×</span>
+    <div class="welcomeForm">
+      <input type="text" id="firstName" placeholder="First Name">
+      <input type="text" id="lastName" placeholder="Last Name">
+      <button onclick="saveUserName()">Enter Portfolio</button>
     </div>
   </div>
+</div>
+<!-- ================================================= -->
 
-  <!-- SOCIAL MODAL -->
-  <div class="projects-modal" id="socialModal">
-    <div class="modal-content">
-      <a href="https://www.facebook.com/share/1AK2kLC8EP//" target="_blank" class="project-box social-facebook">Facebook</a>
-      <a href="https://www.instagram.com/h7sn___?igsh=Yzh1NnM3ajNxb2R6/" target="_blank" class="project-box social-instagram">Instagram</a>
-      <a href="https://www.behance.net/595a6836/" target="_blank" class="project-box social-behance">Behance</a>
-      <a href="https://www.tiktok.com/@hs121x" target="_blank" class="project-box social-tiktok">TikTok</a>
-      <a href="https://wa.me/201507280647" target="_blank" class="project-box social-whatsapp">WhatsApp</a>
+<!-- HERO SECTION -->
+<section class="hero-section">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-badge">Welcome</span>
 
-      <span class="close-modal" id="closeSocial">×</span>
+    <h1 class="hero-title" data-text="Hussein Mohamed">
+      Hussein <span>Mohamed</span>
+    </h1>
+
+    <h2 class="hero-subtitle">Graphic Designer & Visual Creator</h2>
+    <p class="hero-desc">
+      I create modern, clean, and creative designs that help brands stand out visually.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="javascript:void(0)" class="btn primary" id="viewProjectsBtn">View Projects</a>
+      <a href="about.html" class="btn outline">About Me</a>
+      <a href="cv.html" class="btn outline">Download CV</a>
+      <a href="javascript:void(0)" class="btn outline" id="openSocialBtn">Social Media</a>
     </div>
   </div>
+</section>
+
+<!-- PROJECTS MODAL -->
+<div class="projects-modal" id="projectsModal">
+  <div class="modal-content">
+    <a href="social.html" class="project-box">Social</a>
+    <a href="branding.html" class="project-box">Branding</a>
+    <span class="close-modal" id="closeProjects">×</span>
+  </div>
+</div>
+
+<!-- SOCIAL MODAL -->
+<div class="projects-modal" id="socialModal">
+  <div class="modal-content">
+    <a href="https://www.facebook.com/share/1AK2kLC8EP//" target="_blank" class="project-box social-facebook">Facebook</a>
+    <a href="https://www.instagram.com/h7sn___?igsh=Yzh1NnM3ajNxb2R6/" target="_blank" class="project-box social-instagram">Instagram</a>
+    <a href="https://www.behance.net/595a6836/" target="_blank" class="project-box social-behance">Behance</a>
+    <a href="https://www.tiktok.com/@hs121x" target="_blank" class="project-box social-tiktok">TikTok</a>
+    <a href="https://wa.me/201507280647" target="_blank" class="project-box social-whatsapp">WhatsApp</a>
+    <span class="close-modal" id="closeSocial">×</span>
+  </div>
+</div>
 
 <script>
-  // Projects Modal
-  const viewBtn = document.getElementById('viewProjectsBtn');
-  const modal = document.getElementById('projectsModal');
-  const closeModal = document.getElementById('closeProjects');
+/* ===== Welcome Popup ===== */
+const overlay = document.getElementById("welcomeOverlay");
 
-  viewBtn.addEventListener('click', () => {
-    modal.classList.add('active');
+if (localStorage.getItem("userFullName")) {
+  overlay.classList.add("hide");
+  setTimeout(() => overlay.style.display = "none", 600);
+}
+
+function saveUserName() {
+  const first = document.getElementById("firstName").value.trim();
+  const last  = document.getElementById("lastName").value.trim();
+
+  if (first === "" || last === "") {
+    alert("Please enter your full name");
+    return;
+  }
+
+  /* ===== SEND TO GOOGLE FORM ===== */
+  const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfFFNaSsnDIpSjwiRr-DaNrZJN1Kr583QMhQmbBeAW4uGwu_Q/formResponse";
+  const data = new FormData();
+  data.append("entry.1130350647", first); // First Name
+  data.append("entry.282331383", last);   // Last Name
+
+  fetch(formURL, {
+    method: "POST",
+    mode: "no-cors",
+    body: data
   });
 
-  closeModal.addEventListener('click', () => {
-    modal.classList.remove('active');
-  });
+  /* ===== SAVE LOCAL ===== */
+  localStorage.setItem("userFullName", first + " " + last);
 
-  // Social Media Modal
-  const openSocialBtn = document.getElementById('openSocialBtn');
-  const socialModal = document.getElementById('socialModal');
-  const closeSocial = document.getElementById('closeSocial');
+  overlay.classList.add("hide");
+  setTimeout(() => overlay.style.display = "none", 600);
+}
 
-  openSocialBtn.addEventListener('click', () => {
-    socialModal.classList.add('active');
-  });
+/* ===== Projects Modal ===== */
+const viewBtn = document.getElementById('viewProjectsBtn');
+const modal = document.getElementById('projectsModal');
+const closeModal = document.getElementById('closeProjects');
 
-  closeSocial.addEventListener('click', () => {
-    socialModal.classList.remove('active');
-  });
+viewBtn.addEventListener('click', () => modal.classList.add('active'));
+closeModal.addEventListener('click', () => modal.classList.remove('active'));
+
+/* ===== Social Modal ===== */
+const openSocialBtn = document.getElementById('openSocialBtn');
+const socialModal = document.getElementById('socialModal');
+const closeSocial = document.getElementById('closeSocial');
+
+openSocialBtn.addEventListener('click', () => socialModal.classList.add('active'));
+closeSocial.addEventListener('click', () => socialModal.classList.remove('active'));
 </script>
 
 </body>

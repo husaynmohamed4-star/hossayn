@@ -500,6 +500,22 @@ body::after {
     transform: translate(-50%, -50%);
   }
 }
+/* ================= PARTICLES ================= */
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: particlesMove 40s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes particlesMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 1000px; }
+}
 
 /* ================= GRADIENT MOTION ================= */
 .hero-section {
@@ -622,4 +638,125 @@ body {
 .pdf-btn:hover {
   transform: translateY(-6px) scale(1.05);
   box-shadow: 0 20px 45px rgba(55, 0, 255, 0.6);
+}
+#nameOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.namePopup {
+  background: #fff;
+  padding: 30px;
+  width: 320px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.namePopup h2 {
+  margin-bottom: 10px;
+}
+
+.namePopup p {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.namePopup input {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+}
+
+.namePopup button {
+  width: 100%;
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+/* ===== WELCOME POPUP ===== */
+#welcomeOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  animation: fadeIn 0.6s ease;
+}
+
+#welcomeOverlay.hide {
+  animation: fadeOut 0.6s ease forwards;
+}
+
+.welcomeBox {
+  width: 520px;
+background: linear-gradient(135deg, #41295a, #2F0743);
+  border-radius: 20px;
+  overflow: hidden;
+  transform: scale(0.8);
+  animation: scaleIn 0.6s ease forwards;
+}
+
+.welcomeHeader {
+  background: rgba(78, 7, 57, 0.5);
+  color: #fff;
+  padding: 25px;
+  text-align: center;
+}
+
+.welcomeHeader h2 {
+  letter-spacing: 3px;
+  margin-bottom: 5px;
+}
+
+.welcomeHeader p {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.welcomeForm {
+  padding: 25px;
+}
+
+.welcomeForm input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.welcomeForm button {
+  width: 100%;
+  padding: 12px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeOut {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+@keyframes scaleIn {
+  from {transform: scale(0.8);}
+  to {transform: scale(1);}
 }
