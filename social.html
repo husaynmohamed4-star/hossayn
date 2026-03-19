@@ -12,7 +12,7 @@
   <div class="portfolio-category">
     <h2>Social Media</h2>
     <div class="images-grid">
-      <!-- 30 صورة -->
+
       <div class="image-box"><img src="images/social1.jpg" alt="Social 1"></div>
       <div class="image-box"><img src="images/social2.jpg" alt="Social 2"></div>
       <div class="image-box"><img src="images/social3.jpg" alt="Social 3"></div>
@@ -43,12 +43,12 @@
       <div class="image-box"><img src="images/social28.jpg" alt="Social 28"></div>
       <div class="image-box"><img src="images/social29.jpg" alt="Social 29"></div>
       <div class="image-box"><img src="images/social30.jpg" alt="Social 30"></div>
-      <div class="image-box"><img src="images/social31.jpg" alt="Social 30"></div>
-      <div class="image-box"><img src="images/social32.jpg" alt="Social 30"></div>
-      <div class="image-box"><img src="images/social33.jpg" alt="Social 30"></div>
-      <div class="image-box"><img src="images/social34.jpg" alt="Social 30"></div>
-      <div class="image-box"><img src="images/social35.jpg" alt="Social 30"></div>
-      <div class="image-box"><img src="images/social36.jpg" alt="Social 30"></div>
+      <div class="image-box"><img src="images/social31.jpg" alt="Social 31"></div>
+      <div class="image-box"><img src="images/social32.jpg" alt="Social 32"></div>
+      <div class="image-box"><img src="images/social33.jpg" alt="Social 33"></div>
+      <div class="image-box"><img src="images/social34.jpg" alt="Social 34"></div>
+      <div class="image-box"><img src="images/social35.jpg" alt="Social 35"></div>
+      <div class="image-box"><img src="images/social36.jpg" alt="Social 36"></div>
 
     </div>
   </div>
@@ -57,6 +57,10 @@
 <!-- IMAGE MODAL -->
 <div class="image-modal" id="imageModal">
   <span class="close-modal" id="closeImageModal">×</span>
+
+  <!-- زر التحميل -->
+  <a id="downloadBtn" download>تحميل الصورة</a>
+
   <img src="" alt="Full Image" id="fullImage">
 </div>
 
@@ -65,10 +69,12 @@
   const imageModal = document.getElementById('imageModal');
   const fullImage = document.getElementById('fullImage');
   const closeImage = document.getElementById('closeImageModal');
+  const downloadBtn = document.getElementById('downloadBtn');
 
   imageBoxes.forEach(img => {
     img.addEventListener('click', () => {
       fullImage.src = img.src;
+      downloadBtn.href = img.src;
       imageModal.classList.add('active');
     });
   });
