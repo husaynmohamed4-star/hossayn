@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hussein Mohamed | Portfolio</title>
+
+  <!-- SEO -->
+  <title>Hussein Mohamed | حسين محمد</title>
+  <meta name="description" content="Hussein Mohamed portfolio - Graphic Designer | الموقع الشخصي لحسين محمد مصمم جرافيك">
+  <meta name="keywords" content="Hussein Mohamed, حسين محمد, Graphic Designer, Portfolio">
+  <meta name="author" content="Hussein Mohamed">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,13 +37,19 @@
   <div class="hero-content">
     <span class="hero-badge">Welcome</span>
 
+    <!-- الاسم الإنجليزي + العربي -->
     <h1 class="hero-title" data-text="Hussein Mohamed">
       Hussein <span>Mohamed</span>
     </h1>
 
-    <h2 class="hero-subtitle">Graphic Designer & Visual Creator</h2>
+    <!-- الاسم بالعربي -->
+    <h2 style="margin-top:10px; font-weight:normal;">
+      حسين محمد
+    </h2>
+
+    <h3 class="hero-subtitle">Graphic Designer & Visual Creator</h3>
     <p class="hero-desc">
-      I create modern, clean, and creative designs that help brands stand out visually.
+      I am Hussein Mohamed, a graphic designer creating modern and creative designs that help brands stand out.
     </p>
 
     <div class="hero-buttons">
@@ -71,7 +83,6 @@
 </div>
 
 <script>
-/* ===== Welcome Popup ===== */
 const overlay = document.getElementById("welcomeOverlay");
 
 if (localStorage.getItem("userFullName")) {
@@ -88,11 +99,10 @@ function saveUserName() {
     return;
   }
 
-  /* ===== SEND TO GOOGLE FORM ===== */
   const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfFFNaSsnDIpSjwiRr-DaNrZJN1Kr583QMhQmbBeAW4uGwu_Q/formResponse";
   const data = new FormData();
-  data.append("entry.1130350647", first); // First Name
-  data.append("entry.282331383", last);   // Last Name
+  data.append("entry.1130350647", first);
+  data.append("entry.282331383", last);
 
   fetch(formURL, {
     method: "POST",
@@ -100,7 +110,6 @@ function saveUserName() {
     body: data
   });
 
-  /* ===== SAVE LOCAL ===== */
   localStorage.setItem("userFullName", first + " " + last);
 
   overlay.classList.add("hide");
