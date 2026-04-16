@@ -772,3 +772,51 @@ background: linear-gradient(135deg, #41295a, #2F0743);
   font-size: 14px;
   z-index: 1000;
 }
+#siteLogo {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  width: 70px;
+  z-index: 9999;
+  transition: all 0.6s ease;
+}
+
+/* شكل الأنيميشن أول مرة بس */
+#siteLogo.intro {
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  transform: translate(-50%, -50%);
+}1
+#siteLogo {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  width: 70px;
+  z-index: 9999;
+  transition: all 0.8s ease;
+}
+
+/* شكل البداية (في النص) */
+#siteLogo.intro {
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  transform: translate(-50%, -50%);
+}
+/* ===== FIX SITE LOGO ===== */
+#siteLogo {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  width: 70px;
+  z-index: 9999;
+  transition: all 0.8s ease;
+}
+
+#siteLogo.intro {
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  transform: translate(-50%, -50%);
+}

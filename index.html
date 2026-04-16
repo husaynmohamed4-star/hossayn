@@ -11,8 +11,35 @@
   <meta name="author" content="Hussein Mohamed">
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- LOGO ANIMATION STYLE -->
+  <style>
+    #siteLogo {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      width: 70px;
+      z-index: 9999;
+      transition: all 1s ease;
+    }
+
+    /* أول ما يظهر في النص */
+    #siteLogo.intro {
+      top: 50%;
+      left: 50%;
+      width: 140px;
+      transform: translate(-50%, -50%);
+    }
+  </style>
 </head>
+
 <body>
+
+<!-- ================= LOGO ================= -->
+<img src="assets/logo.png" id="siteLogo" alt="logo">
+
+<!-- ================= AUDIO ================= -->
+<audio id="introVoice" src="assets/voice.mp3"></audio>
 
 <!-- ================= WELCOME POPUP ================= -->
 <div id="welcomeOverlay">
@@ -25,29 +52,28 @@
     <div class="welcomeForm">
       <input type="text" id="firstName" placeholder="First Name">
       <input type="text" id="lastName" placeholder="Last Name">
-      <button onclick="saveUserName()">Enter Portfolio</button>
+      <button onclick="saveUserName(); playVoice();">Enter Portfolio</button>
     </div>
   </div>
 </div>
-<!-- ================================================= -->
 
 <!-- HERO SECTION -->
 <section class="hero-section">
   <div class="hero-overlay"></div>
   <div class="hero-content">
+
     <span class="hero-badge">Welcome</span>
 
-    <!-- الاسم الإنجليزي + العربي -->
     <h1 class="hero-title" data-text="Hussein Mohamed Designer">
       Hussein <span>design</span>
     </h1>
 
-    <!-- الاسم بالعربي -->
     <h2 style="margin-top:10px; font-weight:normal;">
       حسين محمد جرافيك
     </h2>
 
     <h3 class="hero-subtitle">Graphic Designer & Visual Creator</h3>
+
     <p class="hero-desc">
       I am Hussein Mohamed, a graphic designer creating modern and creative designs that help brands stand out.
     </p>
@@ -83,18 +109,45 @@
 </div>
 
 <script>
+
+/* ========== LOGO ANIMATION ========== */
+window.addEventListener("load", () => {
+  const logo = document.getElementById("siteLogo");
+
+  setTimeout(() => {
+    logo.classList.add("intro");
+
+    setTimeout(() => {
+      logo.classList.remove("intro");
+    }, 1000);
+
+  }, 300);
+});
+
+
+/* ========== VOICE ========== */
+function playVoice() {
+  const audio = document.getElementById("introVoice");
+
+  // مهم عشان المتصفح يسمح بالصوت
+  audio.play().catch(() => {
+    console.log("Audio blocked until user interaction");
+  });
+}
+
+
+/* ========== WELCOME FORM ========== */
 const overlay = document.getElementById("welcomeOverlay");
 
 if (localStorage.getItem("userFullName")) {
-  overlay.classList.add("hide");
-  setTimeout(() => overlay.style.display = "none", 600);
+  overlay.style.display = "none";
 }
 
 function saveUserName() {
   const first = document.getElementById("firstName").value.trim();
   const last  = document.getElementById("lastName").value.trim();
 
-  if (first === "" || last === "") {
+  if (!first || !last) {
     alert("Please enter your full name");
     return;
   }
@@ -112,11 +165,11 @@ function saveUserName() {
 
   localStorage.setItem("userFullName", first + " " + last);
 
-  overlay.classList.add("hide");
-  setTimeout(() => overlay.style.display = "none", 600);
+  overlay.style.display = "none";
 }
 
-/* ===== Projects Modal ===== */
+
+/* ========== MODALS (زي ما هي عندك) ========== */
 const viewBtn = document.getElementById('viewProjectsBtn');
 const modal = document.getElementById('projectsModal');
 const closeModal = document.getElementById('closeProjects');
@@ -124,13 +177,13 @@ const closeModal = document.getElementById('closeProjects');
 viewBtn.addEventListener('click', () => modal.classList.add('active'));
 closeModal.addEventListener('click', () => modal.classList.remove('active'));
 
-/* ===== Social Modal ===== */
 const openSocialBtn = document.getElementById('openSocialBtn');
 const socialModal = document.getElementById('socialModal');
 const closeSocial = document.getElementById('closeSocial');
 
 openSocialBtn.addEventListener('click', () => socialModal.classList.add('active'));
 closeSocial.addEventListener('click', () => socialModal.classList.remove('active'));
+
 </script>
 
 </body>
