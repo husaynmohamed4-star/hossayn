@@ -820,3 +820,115 @@ background: linear-gradient(135deg, #41295a, #2F0743);
   width: 140px;
   transform: translate(-50%, -50%);
 }
+/* ================= RESPONSIVE ADD-ON ================= */
+
+/* منع أي scroll أفقي */
+html, body {
+  overflow-x: hidden;
+}
+
+/* النصوص تبقى scalable */
+.hero-title {
+  font-size: clamp(32px, 6vw, 60px);
+}
+
+.hero-subtitle {
+  font-size: clamp(18px, 3vw, 26px);
+}
+
+.hero-desc {
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+
+  .hero-section {
+    height: auto;
+    padding: 60px 15px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    line-height: 1.2;
+  }
+
+  /* الأزرار تبقى تحت بعض */
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 85%;
+    max-width: 280px;
+    margin: auto;
+  }
+
+  /* الخلفية الكبيرة "HUSSEIN" */
+  .hero-section::before {
+    font-size: 80px;
+    letter-spacing: 5px;
+  }
+
+  /* overlay */
+  .hero-overlay {
+    width: 300px;
+    height: 300px;
+    filter: blur(80px);
+  }
+
+  /* المودال */
+  .modal-content {
+    padding: 25px;
+    gap: 20px;
+  }
+
+  .project-box {
+    width: 100%;
+    max-width: 260px;
+    height: 120px;
+    font-size: 18px;
+  }
+
+  /* welcome popup */
+  .welcomeBox {
+    width: 90%;
+  }
+
+  /* اللوجو */
+  #siteLogo {
+    width: 50px;
+    top: 10px;
+    left: 10px;
+  }
+}
+
+/* موبايل صغير جدا */
+@media (max-width: 480px) {
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-section::before {
+    font-size: 60px;
+  }
+
+  .btn {
+    width: 95%;
+  }
+}
+@media (max-width: 768px) {
+  .hero-section::after,
+  .hero-section::before {
+    animation: none;
+  }
+
+  .hero-overlay {
+    filter: blur(60px);
+  }
+}
