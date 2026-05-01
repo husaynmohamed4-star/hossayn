@@ -4,51 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO -->
   <title>Hussein Mohamed | حسين محمد</title>
-  <meta name="description" content="Hussein Mohamed portfolio - Graphic Designer | الموقع الشخصي لحسين محمد مصمم جرافيك">
-  <meta name="keywords" content="Hussein Mohamed, حسين محمد, Graphic Designer, Portfolio">
-  <meta name="author" content="Hussein Mohamed">
-
+  <meta name="description" content="Hussein Mohamed portfolio - Graphic Designer">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@900&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css">
-
-  <!-- LOGO ANIMATION STYLE -->
-  <style>
-    #siteLogo {
-      position: fixed;
-      top: 15px;
-      left: 15px;
-      width: 70px;
-      z-index: 9999;
-      transition: all 1s ease;
-    }
-
-    /* أول ما يظهر في النص */
-    #siteLogo.intro {
-      top: 50%;
-      left: 50%;
-      width: 140px;
-      transform: translate(-50%, -50%);
-    }
-  </style>
 </head>
 
 <body>
 
-<!-- ================= LOGO ================= -->
 <img src="assets/logo.png" id="siteLogo" alt="logo">
 
-<!-- ================= AUDIO ================= -->
 <audio id="introVoice" src="assets/voice.mp3"></audio>
 
-<!-- ================= WELCOME POPUP ================= -->
 <div id="welcomeOverlay">
   <div class="welcomeBox">
     <div class="welcomeHeader">
       <h2>WELCOME</h2>
       <p>PLEASE ENTER YOUR NAME</p>
     </div>
-
     <div class="welcomeForm">
       <input type="text" id="firstName" placeholder="First Name">
       <input type="text" id="lastName" placeholder="Last Name">
@@ -57,18 +32,12 @@
   </div>
 </div>
 
-<!-- HERO SECTION -->
 <section class="hero-section">
   <div class="hero-overlay"></div>
   <div class="hero-content">
+    <h1 class="hero-title">HUSSEIN DESIGN</h1>
 
-    <span class="hero-badge">Welcome</span>
-
-    <h1 class="hero-title" data-text="Hussein Mohamed Designer">
-      Hussein <span>design</span>
-    </h1>
-
-    <h2 style="margin-top:10px; font-weight:normal;">
+    <h2 style="margin-top:10px; font-weight:normal; font-family: 'Montserrat', sans-serif;">
       حسين محمد جرافيك
     </h2>
 
@@ -87,7 +56,6 @@
   </div>
 </section>
 
-<!-- PROJECTS MODAL -->
 <div class="projects-modal" id="projectsModal">
   <div class="modal-content">
     <a href="social.html" class="project-box">Social</a>
@@ -96,95 +64,87 @@
   </div>
 </div>
 
-<!-- SOCIAL MODAL -->
 <div class="projects-modal" id="socialModal">
   <div class="modal-content">
-    <a href="https://www.facebook.com/share/1AK2kLC8EP//" target="_blank" class="project-box social-facebook">Facebook</a>
-    <a href="https://www.instagram.com/h7sn___?igsh=Yzh1NnM3ajNxb2R6/" target="_blank" class="project-box social-instagram">Instagram</a>
-    <a href="https://www.behance.net/595a6836/" target="_blank" class="project-box social-behance">Behance</a>
-    <a href="https://www.tiktok.com/@hs121x" target="_blank" class="project-box social-tiktok">TikTok</a>
-    <a href="https://wa.me/201507280647" target="_blank" class="project-box social-whatsapp">WhatsApp</a>
+    <a href="https://www.facebook.com/share/1AK2kLC8EP//" target="_blank" class="project-box">Facebook</a>
+    <a href="https://www.instagram.com/h7sn___?igsh=Yzh1NnM3ajNxb2R6/" target="_blank" class="project-box">Instagram</a>
+    <a href="https://www.behance.net/595a6836/" target="_blank" class="project-box">Behance</a>
+    <a href="https://www.tiktok.com/@hs121x" target="_blank" class="project-box">TikTok</a>
+    <a href="https://wa.me/201507280647" target="_blank" class="project-box">WhatsApp</a>
     <span class="close-modal" id="closeSocial">×</span>
   </div>
 </div>
 
 <script>
-
-/* ========== LOGO ANIMATION ========== */
+/* ========== 1. حركة اللوجو وتثبيته ========== */
 window.addEventListener("load", () => {
   const logo = document.getElementById("siteLogo");
-
   setTimeout(() => {
-    logo.classList.add("intro");
-
+    logo.classList.add("show-intro");
     setTimeout(() => {
-      logo.classList.remove("intro");
-    }, 1000);
-
+      logo.classList.remove("show-intro");
+      logo.classList.add("settled");
+    }, 1200);
   }, 300);
 });
 
+/* ========== 2. منطق النوافذ ========== */
+const modals = {
+  projects: { btn: 'viewProjectsBtn', win: 'projectsModal', close: 'closeProjects' },
+  social: { btn: 'openSocialBtn', win: 'socialModal', close: 'closeSocial' }
+};
 
-/* ========== VOICE ========== */
-function playVoice() {
-  const audio = document.getElementById("introVoice");
+Object.values(modals).forEach(m => {
+  const openBtn = document.getElementById(m.btn);
+  const winEl = document.getElementById(m.win);
+  const closeBtn = document.getElementById(m.close);
+  if(openBtn) openBtn.onclick = () => winEl.classList.add('active');
+  if(closeBtn) closeBtn.onclick = () => winEl.classList.remove('active');
+});
 
-  // مهم عشان المتصفح يسمح بالصوت
-  audio.play().catch(() => {
-    console.log("Audio blocked until user interaction");
+window.onclick = (e) => {
+  if (e.target.classList.contains('projects-modal')) e.target.classList.remove('active');
+};
+
+/* ========== 3. تأثير النيون عند الضغط ========== */
+document.querySelectorAll('.btn').forEach(button => {
+  button.addEventListener('click', function(e) {
+    const rect = this.getBoundingClientRect();
+    const ripple = document.createElement('span');
+    ripple.className = 'neon-ripple';
+    ripple.style.left = `${e.clientX - rect.left}px`;
+    ripple.style.top = `${e.clientY - rect.top}px`;
+    this.appendChild(ripple);
+    setTimeout(() => ripple.remove(), 600);
   });
-}
+});
 
-
-/* ========== WELCOME FORM ========== */
+/* ========== 4. الترحيب ========== */
 const overlay = document.getElementById("welcomeOverlay");
+if (localStorage.getItem("userFullName")) overlay.style.display = "none";
 
-if (localStorage.getItem("userFullName")) {
-  overlay.style.display = "none";
+function playVoice() {
+  document.getElementById("introVoice").play().catch(() => {});
 }
 
 function saveUserName() {
   const first = document.getElementById("firstName").value.trim();
-  const last  = document.getElementById("lastName").value.trim();
-
-  if (!first || !last) {
-    alert("Please enter your full name");
-    return;
-  }
-
+  const last = document.getElementById("lastName").value.trim();
+  if (!first || !last) { alert("Please enter your full name"); return; }
+  
   const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfFFNaSsnDIpSjwiRr-DaNrZJN1Kr583QMhQmbBeAW4uGwu_Q/formResponse";
   const data = new FormData();
   data.append("entry.1130350647", first);
   data.append("entry.282331383", last);
-
-  fetch(formURL, {
-    method: "POST",
-    mode: "no-cors",
-    body: data
-  });
+  fetch(formURL, { method: "POST", mode: "no-cors", body: data });
 
   localStorage.setItem("userFullName", first + " " + last);
-
   overlay.style.display = "none";
 }
-
-
-/* ========== MODALS (زي ما هي عندك) ========== */
-const viewBtn = document.getElementById('viewProjectsBtn');
-const modal = document.getElementById('projectsModal');
-const closeModal = document.getElementById('closeProjects');
-
-viewBtn.addEventListener('click', () => modal.classList.add('active'));
-closeModal.addEventListener('click', () => modal.classList.remove('active'));
-
-const openSocialBtn = document.getElementById('openSocialBtn');
-const socialModal = document.getElementById('socialModal');
-const closeSocial = document.getElementById('closeSocial');
-
-openSocialBtn.addEventListener('click', () => socialModal.classList.add('active'));
-closeSocial.addEventListener('click', () => socialModal.classList.remove('active'));
-
 </script>
-
+function goBack() {
+  window.history.back();
+}
+</script>
 </body>
 </html>
