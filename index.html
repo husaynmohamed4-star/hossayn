@@ -50,7 +50,6 @@
     <div class="hero-buttons">
       <a href="javascript:void(0)" class="btn primary" id="viewProjectsBtn">View Projects</a>
       <a href="about.html" class="btn outline">About Me</a>
-      <a href="cv.html" class="btn outline">Download CV</a>
       <a href="javascript:void(0)" class="btn outline" id="openSocialBtn">Social Media</a>
     </div>
   </div>
@@ -66,10 +65,9 @@
 
 <div class="projects-modal" id="socialModal">
   <div class="modal-content">
-    <a href="https://www.facebook.com/share/1AK2kLC8EP//" target="_blank" class="project-box">Facebook</a>
     <a href="https://www.instagram.com/h7sn___?igsh=Yzh1NnM3ajNxb2R6/" target="_blank" class="project-box">Instagram</a>
     <a href="https://www.behance.net/595a6836/" target="_blank" class="project-box">Behance</a>
-    <a href="https://www.tiktok.com/@hs121x" target="_blank" class="project-box">TikTok</a>
+    <a href="https://www.tiktok.com/@hs121z?_r=1&_t=ZS-975yebY6IUvx" target="_blank" class="project-box">TikTok</a>
     <a href="https://wa.me/201507280647" target="_blank" class="project-box">WhatsApp</a>
     <span class="close-modal" id="closeSocial">×</span>
   </div>
@@ -119,9 +117,14 @@ document.querySelectorAll('.btn').forEach(button => {
   });
 });
 
-/* ========== 4. الترحيب ========== */
+/* ========== 4. الترحيب ومنع الدخول الثابت ========== */
 const overlay = document.getElementById("welcomeOverlay");
-if (localStorage.getItem("userFullName")) overlay.style.display = "none";
+
+if (localStorage.getItem("userFullName")) {
+  overlay.style.setProperty("display", "none", "important");
+} else {
+  overlay.style.setProperty("display", "flex", "important");
+}
 
 function playVoice() {
   document.getElementById("introVoice").play().catch(() => {});
@@ -130,18 +133,23 @@ function playVoice() {
 function saveUserName() {
   const first = document.getElementById("firstName").value.trim();
   const last = document.getElementById("lastName").value.trim();
-  if (!first || !last) { alert("Please enter your full name"); return; }
+  
+  if (!first || !last) { 
+    alert("Please enter your full name to access the portfolio"); 
+    return; 
+  }
   
   const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfFFNaSsnDIpSjwiRr-DaNrZJN1Kr583QMhQmbBeAW4uGwu_Q/formResponse";
   const data = new FormData();
   data.append("entry.1130350647", first);
   data.append("entry.282331383", last);
+  
   fetch(formURL, { method: "POST", mode: "no-cors", body: data });
 
   localStorage.setItem("userFullName", first + " " + last);
-  overlay.style.display = "none";
+  overlay.style.setProperty("display", "none", "important");
 }
-</script>
+
 function goBack() {
   window.history.back();
 }
