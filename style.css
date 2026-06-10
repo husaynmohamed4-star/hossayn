@@ -478,3 +478,82 @@ body::after {
   .image-box { height: 120px; }
   .portfolio-category h2 { font-size: 24px; }
 }
+/* ================= BRANDING PAGE STYLES ================= */
+.branding-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.branding-section h1 {
+  font-family: 'Cairo', sans-serif;
+  font-size: 55px;
+  font-weight: 900;
+  margin-bottom: 40px;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(127, 92, 255, 0.5);
+  letter-spacing: 1px;
+}
+
+/* الحاوية الرئيسية (الإطار المستطيل الدائري) */
+.pdf-buttons {
+  background: rgba(32, 9, 71, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 40px 50px;
+  border-radius: 30px; /* زوايا دائرية على ذوقك */
+  border: 1px solid rgba(127, 92, 255, 0.25);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* هيقسمهم كارتين جنب كارتين */
+  gap: 25px;
+  max-width: 650px;
+  width: 100%;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 40px rgba(127, 92, 255, 0.15);
+}
+
+/* ستايل كروت روابط الـ PDF */
+.pdf-btn {
+  font-family: 'Montserrat', sans-serif;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 25px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* تأثير حركي عند مرور الماوس */
+.pdf-btn:hover {
+  background: linear-gradient(135deg, #7f5cff, #5a1fbf);
+  border-color: #7f5cff;
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(127, 92, 255, 0.4);
+}
+
+/* متوافق مع الشاشات الصغيرة والموبايل */
+@media (max-width: 600px) {
+  .branding-section h1 {
+    font-size: 38px;
+    margin-bottom: 25px;
+  }
+  .pdf-buttons {
+    grid-template-columns: 1fr; /* يخليهم تحت بعض في الموبايل */
+    padding: 30px 20px;
+    gap: 15px;
+  }
+  .pdf-btn {
+    font-size: 16px;
+    padding: 15px;
+  }
+}
