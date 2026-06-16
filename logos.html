@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logos Projects - Hussein Mohamed</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .logos-grid {
+      display: flex !important;
+      justify-content: center; /* بيخلي الصورتين في نص الشاشة */
+      gap: 20px; /* المسافة اللي بين الصورتين بالظبط */
+      flex-wrap: wrap; /* لو الموبايل شاشته صغيرة ينزلوا تحت بعض تلقائي */
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .logos-grid .image-box {
+      width: calc(50% - 10px); /* بياخدوا نص الشاشة بالظبط */
+      max-width: 380px; /* أقصى عرض للصورة عشان ميكبروش بزيادة */
+    }
+  </style>
+</head>
+<body>
+
+<img src="assets/logo.png" class="fixed-logo" alt="Hussein Mohamed Logo">
+<section class="portfolio-section">
+  <div class="portfolio-category">
+    <h2>Logos Designs</h2>
+    
+    <div class="logos-grid">
+      <div class="image-box"><img src="images/logo1.jpg.jpg" alt="Logo 1"></div>
+      <div class="image-box"><img src="images/logo2.jpg.jpg" alt="Logo 2"></div>
+    </div>
+  </div>
+</section>
+
+<div class="image-modal" id="imageModal">
+  <span class="close-modal" id="closeImageModal">×</span>
+  <a id="downloadBtn" download>تحميل الصورة</a>
+  <img src="" alt="Full Image" id="fullImage">
+</div>
+
+<!-- التعديل: جعل الزرار يتوجه مباشرة إلى الصفحة الرئيسية -->
+<button class="back-btn" onclick="location.href='index.html'">← رجوع</button>
+<script>
+  // كود الجافا سكريبت لتشغيل نافذة العرض الكبيرة وزر التحميل
+  // تم تعديله ليقرأ الكلاس الجديد logos-grid أيضاً
+  const imageBoxes = document.querySelectorAll('.logos-grid .image-box img');
+  const imageModal = document.getElementById('imageModal');
+  const fullImage = document.getElementById('fullImage');
+  const closeImage = document.getElementById('closeImageModal');
+  const downloadBtn = document.getElementById('downloadBtn');
+
+  imageBoxes.forEach(img => {
+    img.addEventListener('click', () => {
+      fullImage.src = img.src;
+      downloadBtn.href = img.src;
+      imageModal.classList.add('active');
+    });
+  });
+
+  closeImage.addEventListener('click', () => {
+    imageModal.classList.remove('active');
+  });
+
+  function goBack() {
+    window.history.back();
+  }
+</script>
+
+</body>
+</html>

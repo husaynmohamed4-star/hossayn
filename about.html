@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <img src="assets/logo.png" class="fixed-logo" alt="Hussein Mohamed Logo">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me - Hussein Mohamed</title>
@@ -10,56 +11,92 @@
     .about-section {
       padding: 60px 20px;
       max-width: 900px;
-      margin: auto;
-      background: rgba(24, 15, 66, 0.85);
-      border-radius: 20px;
+      margin: 40px auto;
+      /* تم التغيير للون الزيتي الداكن الزجاجي الميتاليك */
+      background: rgba(6, 40, 30, 0.65) !important;
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(34, 139, 111, 0.35);
+      border-radius: 32px;
       color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(19, 78, 63, 0.2);
     }
+    
     .about-section h2 {
       text-align: center;
       font-size: 42px;
       margin-bottom: 40px;
-      color: #9f7cff;
+      /* تم التغيير للأخضر الزمردي المضيء */
+      color: #228b6f;
+      text-shadow: 0 0 15px rgba(34, 139, 111, 0.4);
+      font-family: 'Cairo', sans-serif;
+      font-weight: 900;
     }
+    
     table {
       width: 100%;
       border-collapse: collapse;
       margin-bottom: 30px;
     }
+    
     th, td {
       text-align: left;
-      padding: 12px 15px;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding: 15px;
+      border-bottom: 1px solid rgba(34, 139, 111, 0.2);
     }
+    
     th {
       width: 180px;
-      color: #ffb703;
+      color: #ffb703; /* الحفاظ على اللون الذهبي الفخم للإبراز */
       font-weight: bold;
       font-size: 18px;
     }
+    
     td {
-      color: #ccc;
+      color: #e0e0e0;
       font-size: 16px;
+      line-height: 1.6;
     }
+    
+    /* تنسيق القوائم الداخلية في الـ Experience */
+    td ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+    
+    td li {
+      margin: 8px 0;
+      color: #ccc;
+    }
+    
     ul.about-list {
       list-style: none;
       padding-left: 0;
     }
+    
     ul.about-list li {
-      margin: 10px 0;
+      margin: 12px 0;
       font-size: 16px;
       color: #fff;
     }
+    
     ul.about-list li::before {
       content: "✔ ";
-      color: #ffb703;
+      color: #228b6f; /* علامة الصح باللون الزمردي المتناسق */
+      font-weight: bold;
     }
+    
     a {
-      color: #00adff;
+      /* تغيير لون اللينك (الإيميل) لأخضر زمردي فاتح وناصع */
+      color: #3adeb4;
       text-decoration: none;
+      transition: 0.3s;
     }
+    
     a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px rgba(58, 222, 180, 0.6);
       text-decoration: underline;
     }
   </style>
@@ -73,9 +110,11 @@
       <tr>
         <th>Profile</th>
         <td>
-          <strong>Hussein Mohamed</strong><br>
-          Graphic Designer<br>
-          📍 Egypt | 📧 <a href="mailto:hm0245192@gmail.com">hm0245192@gmail.com</a> | 📱 01507280647
+          <strong style="color: #fff; font-size: 18px;">Hussein Mohamed</strong><br>
+          <span style="color: #228b6f; font-weight: 600;">Graphic Designer</span><br>
+          <div style="margin-top: 8px;">
+            📍 Egypt | 📧 <a href="mailto:hm0245192@gmail.com">hm0245192@gmail.com</a> | 📱 01507280647
+          </div>
         </td>
       </tr>
       <tr>
@@ -87,8 +126,8 @@
       <tr>
         <th>Experience</th>
         <td>
-          <strong>Graphic Design Intern – Pinnacle Egypt</strong><br>
-          Jan 2024 – Jun 2024
+          <strong style="color: #fff;">Graphic Design Intern – Pinnacle Egypt</strong><br>
+          <span style="color: #228b6f; font-size: 14px;">Jan 2024 – Jun 2024</span>
           <ul>
             <li>Designed marketing materials including social media graphics, banners, and promotional content.</li>
             <li>Collaborated with the creative team to develop visual concepts for campaigns.</li>
@@ -99,9 +138,9 @@
       <tr>
         <th>Skills</th>
         <td>
-          Design Tools: Adobe Photoshop, Illustrator, After Effects, InDesign<br>
-          Design Areas: Branding, Social Media Graphics, Visual Storytelling, Digital Design<br>
-          Other Skills: Creative Thinking, Attention to Detail, Time Management, Team Collaboration
+          <strong style="color: #228b6f;">Design Tools:</strong> Adobe Photoshop, Illustrator, After Effects, InDesign<br>
+          <strong style="color: #228b6f;">Design Areas:</strong> Branding, Social Media Graphics, Visual Storytelling, Digital Design<br>
+          <strong style="color: #228b6f;">Other Skills:</strong> Creative Thinking, Attention to Detail, Time Management, Team Collaboration
         </td>
       </tr>
       <tr>
@@ -122,13 +161,12 @@
     </table>
   </section>
 
+  <button class="back-btn" onclick="goBack()">← رجوع</button>
+
+  <script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
 </body>
 </html>
-
-<button class="back-btn" onclick="goBack()">← رجوع</button>
-
-<script>
-function goBack() {
-  window.history.back();
-}
-</script>
