@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <button class="back-btn" onclick="location.href='index.html'">← تراجع</button>
+
   <img src="assets/logo.png" class="fixed-logo" alt="Hussein Mohamed Logo">
   <img src="assets/logo.png" id="siteLogo" alt="logo">
 
@@ -53,6 +56,7 @@
       <div class="image-box"><img src="images/social36.jpg" alt="Social 36"></div>
       <div class="image-box"><img src="images/social37.jpg" alt="Social 37"></div>
       <div class="image-box"><img src="images/social38.jpg" alt="Social 38"></div>
+      <div class="image-box"><img src="images/social39.jpg" alt="Social 39"></div>
       <div class="image-box"><img src="images/social40.jpg" alt="Social 40"></div>
       <div class="image-box"><img src="images/social41.jpg" alt="Social 41"></div>
       <div class="image-box"><img src="images/social42.jpg" alt="Social 42"></div>
@@ -64,7 +68,6 @@
   </div>
 </section>
 
-<!-- IMAGE MODAL -->
 <div class="image-modal" id="imageModal">
   <span class="close-modal" id="closeImageModal">×</span>
   <a id="downloadBtn" download>تحميل الصورة</a>
@@ -78,6 +81,7 @@
   const closeImage = document.getElementById('closeImageModal');
   const downloadBtn = document.getElementById('downloadBtn');
 
+  // فتح المودال وعرض الصورة الكبيرة عند الضغط على أي صورة
   imageBoxes.forEach(img => {
     img.addEventListener('click', () => {
       fullImage.src = img.src;
@@ -86,17 +90,19 @@
     });
   });
 
-  closeImage.addEventListener('click', () => {
-    imageModal.classList.remove('active');
+  // كود إغلاق الصورة فقط عند الضغط على زرار الـ X
+  if (closeImage) {
+    closeImage.addEventListener('click', () => {
+      imageModal.classList.remove('active');
+    });
+  }
+
+  // كود إغلاق الصورة عند الضغط خارجها (على الخلفية الداكنة)
+  window.addEventListener('click', (e) => {
+    if (e.target === imageModal) {
+      imageModal.classList.remove('active');
+    }
   });
 </script>
-
 </body>
 </html>
-<button class="back-btn" onclick="goBack()">← رجوع</button>
-
-<script>
-function goBack() {
-  window.history.back();
-}
-</script>

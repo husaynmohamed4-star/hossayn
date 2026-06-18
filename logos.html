@@ -23,6 +23,8 @@
 </head>
 <body>
 
+<button class="back-btn" onclick="location.href='index.html'">← تراجع</button>
+
 <img src="assets/logo.png" class="fixed-logo" alt="Hussein Mohamed Logo">
 <section class="portfolio-section">
   <div class="portfolio-category">
@@ -41,17 +43,14 @@
   <img src="" alt="Full Image" id="fullImage">
 </div>
 
-<!-- التعديل: جعل الزرار يتوجه مباشرة إلى الصفحة الرئيسية -->
-<button class="back-btn" onclick="location.href='index.html'">← رجوع</button>
 <script>
-  // كود الجافا سكريبت لتشغيل نافذة العرض الكبيرة وزر التحميل
-  // تم تعديله ليقرأ الكلاس الجديد logos-grid أيضاً
   const imageBoxes = document.querySelectorAll('.logos-grid .image-box img');
   const imageModal = document.getElementById('imageModal');
   const fullImage = document.getElementById('fullImage');
   const closeImage = document.getElementById('closeImageModal');
   const downloadBtn = document.getElementById('downloadBtn');
 
+  // فتح المودال وعرض اللوجو بالحجم الكبير عند الضغط عليه
   imageBoxes.forEach(img => {
     img.addEventListener('click', () => {
       fullImage.src = img.src;
@@ -60,14 +59,19 @@
     });
   });
 
-  closeImage.addEventListener('click', () => {
-    imageModal.classList.remove('active');
-  });
-
-  function goBack() {
-    window.history.back();
+  // كود إغلاق الصورة فقط عند الضغط على زرار الـ X
+  if (closeImage) {
+    closeImage.addEventListener('click', () => {
+      imageModal.classList.remove('active');
+    });
   }
-</script>
 
+  // كود إغلاق الصورة عند الضغط خارجها (على الخلفية الداكنة)
+  window.addEventListener('click', (e) => {
+    if (e.target === imageModal) {
+      imageModal.classList.remove('active');
+    }
+  });
+</script>
 </body>
 </html>
