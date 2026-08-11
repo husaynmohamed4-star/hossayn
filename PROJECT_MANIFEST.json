@@ -1,0 +1,76 @@
+{
+  "social_media_files": [
+    "social1.jpg",
+    "social2.jpg",
+    "social3.jpg",
+    "social4.jpg",
+    "social5.jpg",
+    "social6.jpg",
+    "social7.jpg",
+    "social8.jpg",
+    "social9.jpg",
+    "social10.jpg",
+    "social11.jpg",
+    "social12.jpg",
+    "social13.jpg",
+    "social14.jpg",
+    "social15.jpg",
+    "social16.jpg",
+    "social17.jpg",
+    "social18.jpg",
+    "social19.jpg",
+    "social20.jpg",
+    "social21.jpg",
+    "social22.jpg",
+    "social23.jpg",
+    "social24.jpg",
+    "social25.jpg",
+    "social26.jpg",
+    "social27.jpg",
+    "social28.jpg",
+    "social29.jpg",
+    "social30.jpg",
+    "social31.jpg",
+    "social32.jpg",
+    "social33.jpg",
+    "social34.jpg",
+    "social35.jpg",
+    "social36.jpg",
+    "social37.jpg",
+    "social38.jpg",
+    "social40.jpg",
+    "social41.jpg",
+    "social42.jpg",
+    "social43.jpg",
+    "social44.jpg",
+    "social45.jpg"
+  ],
+  "logo_files": [
+    "logo1.jpg.jpg",
+    "logo2.jpg.jpg"
+  ],
+  "branding_files": [
+    [
+      "pdf1/noir.png",
+      "Noir"
+    ],
+    [
+      "pdf2/rawaq.png",
+      "Rawaq"
+    ],
+    [
+      "pdf4/SIMT.png",
+      "SIMT"
+    ]
+  ],
+  "email": "husseynmohamed2003@gmail.com",
+  "whatsapp": "https://wa.me/201507280647",
+  "pages": [
+    "index.html",
+    "portfolio.html",
+    "social.html",
+    "logos.html",
+    "branding.html",
+    "about.html"
+  ]
+}

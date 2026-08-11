@@ -1,40 +1,25 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Branding Projects - Hussein Mohamed</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Branding Projects — Hussein Mohamed</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="hero-overlay"></div>
+<nav class="portfolio-nav"><a href="index.html">Home</a><a href="portfolio.html">Portfolio</a><a href="social.html">Social Media</a><a href="logos.html">Logos</a><a href="branding.html" class="active">Branding</a><a href="about.html">About</a></nav>
 
-  <div class="hero-overlay"></div>
-  
-  <img src="assets/logo.png" id="siteLogo" class="settled" alt="logo">
+<section class="page-hero"><div class="page-hero-inner"><div class="page-kicker">Brand Identity</div><h1 class="page-title">Branding <span>Projects</span></h1><p class="page-description">Only the original branding projects are shown here — 3 projects.</p></div></section>
+<section class="premium-section"><div class="premium-container"><div class="brand-grid"><article class="brand-card"><a href="pdf1/noir.png" target="_blank" rel="noopener"><img src="pdf1/noir.png" alt="Noir branding project"></a><div class="brand-name">Noir</div></article><article class="brand-card"><a href="pdf2/rawaq.png" target="_blank" rel="noopener"><img src="pdf2/rawaq.png" alt="Rawaq branding project"></a><div class="brand-name">Rawaq</div></article><article class="brand-card"><a href="pdf4/SIMT.png" target="_blank" rel="noopener"><img src="pdf4/SIMT.png" alt="SIMT branding project"></a><div class="brand-name">SIMT</div></article></div></div></section>
 
-  <section class="branding-section">
-    <h1>Branding</h1>
-
-<div class="pdf-buttons">
-  <a href="pdf1/noir.png" target="_blank" class="pdf-btn">
-    🖼️ noir
-  </a>
-
-  <a href="pdf2/rawaq.png" target="_blank" class="pdf-btn">
-    🖼️ Rawaq
-  </a>
-
-  <a href="pdf4/SIMT.png" target="_blank" class="pdf-btn">
-    🖼️ SIMT
-  </a>
-</div>  </section>
-
-  <button class="back-btn" onclick="goBack()">← رجوع</button>
-
+<footer class="site-footer"><div class="footer-links"><a href="index.html">Home</a><a href="portfolio.html">Portfolio</a><a href="social.html">Social Media</a><a href="logos.html">Logos</a><a href="branding.html">Branding</a><a href="about.html">About</a></div><div>© 2026 <strong>Hussein Mohamed</strong> — Graphic Designer</div></footer>
 <script>
-function goBack() {
-  window.history.back();
-}
+(function(){
+ const g=document.getElementById('cursorGlow');
+ if(g)window.addEventListener('mousemove',e=>{g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'},{passive:true});
+})();
 </script>
 
 </body>

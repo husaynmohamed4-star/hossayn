@@ -1,195 +1,47 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta name="description" content="I am Hussein Mohamed, a graphic designer creating modern and creative designs that help brands stand out.">
-
-  <meta property="og:title" content="Hussein Mohamed | Graphic Designer">
-  <meta property="og:description" content="Portfolio of Hussein Mohamed - Graphic Designer & Visual Creator.">
-  <meta property="og:image" content="assets/logo.png">
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Hussein Mohamed | Graphic Designer & Visual Creator</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght=900&family=Montserrat:wght=300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/png" sizes="48x48" href="/hossayn/favicon.png"></head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Hussein Mohamed — Hussein Mohamed</title>
+<link rel="stylesheet" href="style.css">
+</head>
 <body>
-
-<button class="back-btn" onclick="goBack()">تراجع</button>
-
-<img src="assets/logo.png" id="siteLogo" alt="logo">
-
-<audio id="introVoice" src="assets/voice.mp3"></audio>
-
-<div id="welcomeOverlay">
-  <div class="welcomeBox">
-    <div class="welcomeHeader">
-      <h2>WELCOME</h2>
-      <p>PLEASE ENTER YOUR NAME</p>
-    </div>
-    <div class="welcomeForm">
-      <input type="text" id="firstName" placeholder="First Name">
-      <input type="text" id="lastName" placeholder="Last Name">
-      <button onclick="saveUserName(); playVoice();">Enter Portfolio</button>
-    </div>
-  </div>
-</div>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="hero-overlay"></div>
+<nav class="portfolio-nav"><a href="index.html" class="active">Home</a><a href="portfolio.html">Portfolio</a><a href="social.html">Social Media</a><a href="logos.html">Logos</a><a href="branding.html">Branding</a><a href="about.html">About</a></nav>
 
 <section class="hero-section">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1 class="hero-title">HUSSEIN DESIGN</h1>
-
-    <h2 style="margin-top:10px; font-weight:normal; font-family: 'Montserrat', sans-serif;">
-      حسين جرافيك
-    </h2>
-
-    <div style="font-size:11px;letter-spacing:4px;color:#c084fc;font-weight:700;margin-top:18px;">PORTFOLIO • 2026</div>
-    <h3 class="hero-subtitle">Graphic Designer & Visual Creator</h3>
-
-    <p class="hero-desc">
-      I am Hussein Mohamed, a graphic designer creating modern and creative designs that help brands stand out.
-    </p>
-
-    <div class="hero-buttons">
-      <a href="javascript:void(0)" class="btn primary" id="viewProjectsBtn">View Projects</a>
-      <a href="about.html" class="btn outline">About Me</a>
-      <a href="javascript:void(0)" class="btn outline" id="openSocialBtn">Social Media</a>
-    </div>
-  </div>
+<div class="hero-content">
+<div class="hero-kicker">Available for creative projects</div>
+<h1 class="hero-title">HUSSEIN<br><span class="accent">MOHAMED</span></h1>
+<h2>Graphic Designer & Visual Creator</h2>
+<p class="hero-subtitle">Branding • Visual Identity • Social Media • Logo Design</p>
+<p class="hero-desc">I create bold visual identities and digital designs that turn ideas into memorable brands.</p>
+<div class="hero-buttons"><a class="btn primary" href="portfolio.html">Explore My Work</a><a class="btn outline" href="https://wa.me/201507280647" target="_blank" rel="noopener">Email Me</a></div>
+<div class="hero-scroll"><span></span> Scroll to explore</div>
+</div>
 </section>
-
-<div class="projects-modal" id="projectsModal">
-  <div class="modal-content">
-    <a href="social.html" class="project-box">Social</a>
-    <a href="branding.html" class="project-box">Branding</a>
-    <a href="logos.html" class="project-box">Logos</a>
-    <span class="close-modal" id="closeProjects">×</span>
-  </div>
+<section class="premium-section">
+<div class="premium-container">
+<div class="premium-heading"><span class="premium-eyebrow">Explore the work</span><h2>Four ways I design.</h2><p>Choose a category and see the complete original work. No mixed projects, no missing images.</p></div>
+<div class="ultimate-grid">
+<a class="category-card" href="social.html"><span class="number">01</span><h3>Social Media</h3><p>44 social media designs from the original project.</p><span class="arrow">↗</span></a>
+<a class="category-card" href="branding.html"><span class="number">02</span><h3>Branding</h3><p>3 complete branding projects.</p><span class="arrow">↗</span></a>
+<a class="category-card" href="logos.html"><span class="number">03</span><h3>Logo Design</h3><p>2 logo projects from the original portfolio.</p><span class="arrow">↗</span></a>
+<a class="category-card" href="about.html"><span class="number">04</span><h3>About Me</h3><p>Learn about the designer behind the work.</p><span class="arrow">↗</span></a>
 </div>
-
-<div class="projects-modal" id="socialModal">
-  <div class="modal-content">
-    <a href="https://www.instagram.com/h7sn___?igsh=Yzh1NnM3ajNxb2R6/" target="_blank" class="project-box">Instagram</a>
-    <a href="https://www.behance.net/595a6836/" target="_blank" class="project-box">Behance</a>
-    <a href="https://www.tiktok.com/@hs121z?_r=1&_t=ZS-975yebY6IUvx" target="_blank" class="project-box">TikTok</a>
-    <a href="https://wa.me/201507280647" target="_blank" class="project-box">WhatsApp</a>
-    <span class="close-modal" id="closeSocial">×</span>
-  </div>
 </div>
+</section>
+<section class="contact-section"><div class="contact-card"><span class="premium-eyebrow">Let's work together</span><h2>Have a project in mind?</h2><p>Send me the details and let's turn your idea into a strong visual experience.</p><div class="contact-links"><a class="contact-link" href="https://wa.me/201507280647" target="_blank" rel="noopener">Email Me</a><a class="contact-link" href="https://wa.me/201507280647" target="_blank" rel="noopener">WhatsApp</a><a class="contact-link" href="https://www.behance.net/595a6836/" target="_blank" rel="noopener">Behance</a></div></div></section>
 
+<footer class="site-footer"><div class="footer-links"><a href="index.html">Home</a><a href="portfolio.html">Portfolio</a><a href="social.html">Social Media</a><a href="logos.html">Logos</a><a href="branding.html">Branding</a><a href="about.html">About</a></div><div>© 2026 <strong>Hussein Mohamed</strong> — Graphic Designer</div></footer>
 <script>
-/* ========== 1. حركة اللوجو وتثبيته ========== */
-window.addEventListener("load", () => {
-  const logo = document.getElementById("siteLogo");
-  setTimeout(() => {
-    logo.classList.add("show-intro");
-    setTimeout(() => {
-      logo.classList.remove("show-intro");
-      logo.classList.add("settled");
-    }, 1200);
-  }, 300);
-});
-
-/* ========== 2. منطق النوافذ وقفل الصور بعلامة X ========== */
-const modals = {
-  projects: { btn: 'viewProjectsBtn', win: 'projectsModal', close: 'closeProjects' },
-  social: { btn: 'openSocialBtn', win: 'socialModal', close: 'closeSocial' }
-};
-
-Object.values(modals).forEach(m => {
-  const openBtn = document.getElementById(m.btn);
-  const winEl = document.getElementById(m.win);
-  const closeBtn = document.getElementById(m.close);
-  if(openBtn) openBtn.onclick = () => winEl.classList.add('active');
-  if(closeBtn) closeBtn.onclick = () => winEl.classList.remove('active');
-});
-
-// هذا الجزء مخصص لإغلاق مودال الصورة المكبرة عند الضغط على X أو خارجها
-window.onclick = (e) => {
-  // قفل نوافذ المشاريع أو السوشيال ميديا عند الضغط خارج الكادر
-  if (e.target.classList.contains('projects-modal')) {
-    e.target.classList.remove('active');
-  }
-  
-  // 🟢 قفل مودال الصور الفرعية .image-modal عند الضغط على الشاشة بالخارج 🟢
-  if (e.target.classList.contains('image-modal')) {
-    e.target.classList.remove('active');
-  }
-};
-
-// 🟢 التقاط علامة الـ X المخصصة لمودال تكبير الصور في الصفحات وقفلها فوراً عند الضغط 🟢
-document.addEventListener('click', (e) => {
-  if (e.target.matches('.image-modal .close-modal')) {
-    const activeImageModal = document.querySelector('.image-modal.active');
-    if (activeImageModal) activeImageModal.classList.remove('active');
-  }
-});
-
-/* ========== 3. تأثير النيون عند الضغط ========== */
-document.querySelectorAll('.btn').forEach(button => {
-  button.addEventListener('click', function(e) {
-    const rect = this.getBoundingClientRect();
-    const ripple = document.createElement('span');
-    ripple.className = 'neon-ripple';
-    ripple.style.left = `${e.clientX - rect.left}px`;
-    ripple.style.top = `${e.clientY - rect.top}px`;
-    this.appendChild(ripple);
-    setTimeout(() => ripple.remove(), 600);
-  });
-});
-
-/* ========== 4. الترحيب ومنع الدخول الثابت ========== */
-const overlay = document.getElementById("welcomeOverlay");
-
-if (localStorage.getItem("userFullName")) {
-  overlay.style.setProperty("display", "none", "important");
-} else {
-  overlay.style.setProperty("display", "flex", "important");
-}
-
-function playVoice() {
-  document.getElementById("introVoice").play().catch(() => {});
-}
-
-function saveUserName() {
-  const first = document.getElementById("firstName").value.trim();
-  const last = document.getElementById("lastName").value.trim();
-  
-  if (!first || !last) { 
-    alert("Please enter your full name to access the portfolio"); 
-    return; 
-  }
-  
-  const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfFFNaSsnDIpSjwiRr-DaNrZJN1Kr583QMhQmbBeAW4uGwu_Q/formResponse";
-  const data = new FormData();
-  data.append("entry.1130350647", first);
-  data.append("entry.282331383", last);
-  
-  fetch(formURL, { method: "POST", mode: "no-cors", body: data });
-
-  localStorage.setItem("userFullName", first + " " + last);
-  overlay.style.setProperty("display", "none", "important");
-}
-
-/* ========== 5. زر التراجع الذكي المطور ========== */
-function goBack() {
-  const activeProjectsModal = document.querySelector('#projectsModal.active');
-  const activeSocialModal = document.querySelector('#socialModal.active');
-  const activeImageModal = document.querySelector('.image-modal.active');
-
-  if (activeProjectsModal) {
-    activeProjectsModal.classList.remove('active');
-  } else if (activeSocialModal) {
-    activeSocialModal.classList.remove('active');
-  } else if (activeImageModal) {
-    activeImageModal.classList.remove('active');
-  } else {
-    window.history.back();
-  }
-}
+(function(){
+ const g=document.getElementById('cursorGlow');
+ if(g)window.addEventListener('mousemove',e=>{g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'},{passive:true});
+})();
 </script>
+
 </body>
 </html>

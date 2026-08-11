@@ -1,77 +1,34 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logos Projects - Hussein Mohamed</title>
-  <link rel="stylesheet" href="style.css">
-  
-  <style>
-    .logos-grid {
-      display: flex !important;
-      justify-content: center; /* بيخلي الصورتين في نص الشاشة */
-      gap: 20px; /* المسافة اللي بين الصورتين بالظبط */
-      flex-wrap: wrap; /* لو الموبايل شاشته صغيرة ينزلوا تحت بعض تلقائي */
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .logos-grid .image-box {
-      width: calc(50% - 10px); /* بياخدوا نص الشاشة بالظبط */
-      max-width: 380px; /* أقصى عرض للصورة عشان ميكبروش بزيادة */
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Logo Design — Hussein Mohamed</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="hero-overlay"></div>
+<nav class="portfolio-nav"><a href="index.html">Home</a><a href="portfolio.html">Portfolio</a><a href="social.html">Social Media</a><a href="logos.html" class="active">Logos</a><a href="branding.html">Branding</a><a href="about.html">About</a></nav>
 
-<button class="back-btn" onclick="location.href='index.html'">← تراجع</button>
+<section class="page-hero"><div class="page-hero-inner"><div class="page-kicker">Logo Design</div><h1 class="page-title">Logo <span>Design</span></h1><p class="page-description">The complete original logo collection — 2 projects.</p></div></section>
+<section class="premium-section"><div class="premium-container"><div class="brand-grid"><article class="brand-card"><img src="images/logo1.jpg.jpg" alt="Logo 1" loading="lazy"><div class="brand-name">Logo Design 1</div></article><article class="brand-card"><img src="images/logo2.jpg.jpg" alt="Logo 2" loading="lazy"><div class="brand-name">Logo Design 2</div></article></div></div></section>
+<div class="modal-fixed" id="modal"><button class="modal-close" id="close">×</button><img id="modalImg" alt=""><a id="download" class="modal-download" download>Download Image</a></div>
 
-<img src="assets/logo.png" class="fixed-logo" alt="Hussein Mohamed Logo">
-<section class="portfolio-section">
-  <div class="portfolio-category">
-    <h2>Logos Designs</h2>
-    
-    <div class="logos-grid">
-      <div class="image-box"><img src="images/logo1.jpg.jpg" alt="Logo 1"></div>
-      <div class="image-box"><img src="images/logo2.jpg.jpg" alt="Logo 2"></div>
-    </div>
-  </div>
-</section>
-
-<div class="image-modal" id="imageModal">
-  <span class="close-modal" id="closeImageModal">×</span>
-  <a id="downloadBtn" download>تحميل الصورة</a>
-  <img src="" alt="Full Image" id="fullImage">
-</div>
-
+<footer class="site-footer"><div class="footer-links"><a href="index.html">Home</a><a href="portfolio.html">Portfolio</a><a href="social.html">Social Media</a><a href="logos.html">Logos</a><a href="branding.html">Branding</a><a href="about.html">About</a></div><div>© 2026 <strong>Hussein Mohamed</strong> — Graphic Designer</div></footer>
 <script>
-  const imageBoxes = document.querySelectorAll('.logos-grid .image-box img');
-  const imageModal = document.getElementById('imageModal');
-  const fullImage = document.getElementById('fullImage');
-  const closeImage = document.getElementById('closeImageModal');
-  const downloadBtn = document.getElementById('downloadBtn');
-
-  // فتح المودال وعرض اللوجو بالحجم الكبير عند الضغط عليه
-  imageBoxes.forEach(img => {
-    img.addEventListener('click', () => {
-      fullImage.src = img.src;
-      downloadBtn.href = img.src;
-      imageModal.classList.add('active');
-    });
-  });
-
-  // كود إغلاق الصورة فقط عند الضغط على زرار الـ X
-  if (closeImage) {
-    closeImage.addEventListener('click', () => {
-      imageModal.classList.remove('active');
-    });
-  }
-
-  // كود إغلاق الصورة عند الضغط خارجها (على الخلفية الداكنة)
-  window.addEventListener('click', (e) => {
-    if (e.target === imageModal) {
-      imageModal.classList.remove('active');
-    }
-  });
+(function(){
+ const g=document.getElementById('cursorGlow');
+ if(g)window.addEventListener('mousemove',e=>{g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'},{passive:true});
+})();
+</script>
+<script>
+(function(){
+const modal=document.getElementById('modal'),img=document.getElementById('modalImg'),down=document.getElementById('download');
+document.querySelectorAll('.exact-card img').forEach(x=>x.addEventListener('click',()=>{img.src=x.src;img.alt=x.alt;down.href=x.src;modal.classList.add('open')}));
+document.getElementById('close').onclick=()=>modal.classList.remove('open');
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
+})();
 </script>
 </body>
 </html>
