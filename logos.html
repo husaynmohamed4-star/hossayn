@@ -1,34 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Logo Design — Hussein Mohamed</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="cursor-glow" id="cursorGlow"></div>
-<div class="hero-overlay"></div>
-<nav class="portfolio-nav"><a href="index.html">Home</a><a href="portfolio.html">Portfolio</a><a href="social.html">Social Media</a><a href="logos.html" class="active">Logos</a><a href="branding.html">Branding</a><a href="about.html">About</a></nav>
-
-<section class="page-hero"><div class="page-hero-inner"><div class="page-kicker">Logo Design</div><h1 class="page-title">Logo <span>Design</span></h1><p class="page-description">The complete original logo collection — 2 projects.</p></div></section>
-<section class="premium-section"><div class="premium-container"><div class="brand-grid"><article class="brand-card"><img src="images/logo1.jpg.jpg" alt="Logo 1" loading="lazy"><div class="brand-name">Logo Design 1</div></article><article class="brand-card"><img src="images/logo2.jpg.jpg" alt="Logo 2" loading="lazy"><div class="brand-name">Logo Design 2</div></article></div></div></section>
-<div class="modal-fixed" id="modal"><button class="modal-close" id="close">×</button><img id="modalImg" alt=""><a id="download" class="modal-download" download>Download Image</a></div>
-
-<footer class="site-footer"><div class="footer-links"><a href="index.html">Home</a><a href="portfolio.html">Portfolio</a><a href="social.html">Social Media</a><a href="logos.html">Logos</a><a href="branding.html">Branding</a><a href="about.html">About</a></div><div>© 2026 <strong>Hussein Mohamed</strong> — Graphic Designer</div></footer>
-<script>
-(function(){
- const g=document.getElementById('cursorGlow');
- if(g)window.addEventListener('mousemove',e=>{g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'},{passive:true});
-})();
-</script>
-<script>
-(function(){
-const modal=document.getElementById('modal'),img=document.getElementById('modalImg'),down=document.getElementById('download');
-document.querySelectorAll('.exact-card img').forEach(x=>x.addEventListener('click',()=>{img.src=x.src;img.alt=x.alt;down.href=x.src;modal.classList.add('open')}));
-document.getElementById('close').onclick=()=>modal.classList.remove('open');
-modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
-})();
-</script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#07060b"><title>Logo Design — Hussein Mohamed</title><link rel="stylesheet" href="style.css"></head><body><header class="topbar">
+<a class="brand" href="index.html"><img src="logo.png.png" alt="Hussein Mohamed"><span>HUSSEIN MOHAMED</span></a>
+<button class="nav-toggle" aria-label="Open menu">☰</button>
+<nav class="nav"><a href="index.html">Home</a><a href="portfolio.html">Work</a><a href="social.html">Social</a><a href="logos.html">Logos</a><a href="branding.html">Branding</a><a href="about.html">About</a></nav></header>
+<main><section class="page-head"><div class="container reveal"><div class="section-kicker">Identity work</div><h1>Logo <span>design.</span></h1><p>Two identities. Two different moods. Presented as full visual stories instead of tiny cards.</p></div></section><section class="section" style="padding-top:15px"><div class="container"><div class="logo-stage"><article class="logo-card reveal" data-lightbox data-src="optimized/images/logo1.jpg.webp" data-title="Royal Heights — Logo Identity"><img src="optimized/images/logo1.jpg.webp" loading="eager" alt="Royal Heights logo identity"><div class="logo-overlay"><div><small>01 · Real estate identity</small><h2>Royal Heights</h2></div><span class="logo-num">VIEW ↗</span></div></article><article class="logo-card reveal" data-lightbox data-src="optimized/images/logo2.jpg.webp" data-title="Golden Hive — Logo Identity"><img src="optimized/images/logo2.jpg.webp" loading="lazy" alt="Golden Hive logo identity"><div class="logo-overlay"><div><small>02 · Product identity</small><h2>Golden Hive</h2></div><span class="logo-num">VIEW ↗</span></div></article></div></div></section><div class="lightbox"><button class="lb-close">×</button><img alt=""><div class="lb-caption"></div></div></main><footer class="site-footer"><div class="container footer-inner"><div class="footer-links"><a href="index.html">Home</a><a href="portfolio.html">Work</a><a href="social.html">Social</a><a href="logos.html">Logos</a><a href="branding.html">Branding</a><a href="about.html">About</a></div><div>© 2026 Hussein Mohamed — Graphic Designer & Developer</div></div></footer><script src="script.js"></script></body></html>
